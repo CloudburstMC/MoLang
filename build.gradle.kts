@@ -4,8 +4,8 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_16
-    targetCompatibility = JavaVersion.VERSION_16
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
@@ -25,7 +25,7 @@ dependencies {
 }
 
 group = "com.bedrockk"
-version = "1.1.19"
+version = "1.1.19-SNAPSHOT"
 
 tasks.named<Test>("test") {
     useJUnitPlatform()
@@ -38,15 +38,28 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
+            pom {
+                packaging = "jar"
+                url.set("https://github.com/CloudburstMC/MoLang")
+
+                scm {
+                    connection.set("scm:git:git://github.com/CloudburstMC/MoLang.git")
+                    developerConnection.set("scm:git:ssh://github.com/CloudburstMC/MoLang.git")
+                    url.set("https://github.com/CloudburstMC/MoLang")
+                }
+            }
         }
     }
     repositories {
         maven {
-            name = "BedrockkPackages"
-            url = uri("https://maven.pkg.github.com/bedrockk/MoLang")
+            name = "maven-deploy"
+            url = uri(
+                System.getenv("MAVEN_DEPLOY_URL")
+                    ?: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            )
             credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_USER")
-                password = project.findProperty("gpr.token") as String? ?: System.getenv("GITHUB_TOKEN")
+                username = System.getenv("MAVEN_DEPLOY_USERNAME") ?: "username"
+                password = System.getenv("MAVEN_DEPLOY_PASSWORD") ?: "password"
             }
         }
     }
