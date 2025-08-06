@@ -6,9 +6,11 @@ import com.bedrockk.molang.runtime.MoLangEnvironment;
 import com.bedrockk.molang.runtime.MoScope;
 import com.bedrockk.molang.runtime.value.DoubleValue;
 import com.bedrockk.molang.runtime.value.MoValue;
+import lombok.ToString;
 
 import java.util.List;
 
+@ToString(callSuper = true)
 public class CoalesceExpression extends BinaryOpExpression {
 
     public CoalesceExpression(Expression left, Expression right) {

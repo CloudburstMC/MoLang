@@ -22,4 +22,9 @@ public class StringValue implements MoValue {
     public boolean equals(Object obj) {
         return super.equals(obj) || (obj instanceof StringValue && ((StringValue)obj).asString().equals(value)) || (obj instanceof DoubleValue && ((DoubleValue)obj).asString().equals(value));
     }
+
+    @Override
+    public String toString() {
+        return this.asString();
+    }
 }

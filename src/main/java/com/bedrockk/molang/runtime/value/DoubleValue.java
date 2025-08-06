@@ -1,5 +1,8 @@
 package com.bedrockk.molang.runtime.value;
 
+import lombok.ToString;
+
+@ToString
 public class DoubleValue implements MoValue {
 
     public final static DoubleValue ZERO = new DoubleValue(0.0);

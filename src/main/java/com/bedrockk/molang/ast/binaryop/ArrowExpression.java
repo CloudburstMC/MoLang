@@ -5,7 +5,9 @@ import com.bedrockk.molang.ast.BinaryOpExpression;
 import com.bedrockk.molang.runtime.MoLangEnvironment;
 import com.bedrockk.molang.runtime.MoScope;
 import com.bedrockk.molang.runtime.value.MoValue;
+import lombok.ToString;
 
+@ToString(callSuper = true)
 public class ArrowExpression extends BinaryOpExpression {
 
     public ArrowExpression(Expression left, Expression right) {

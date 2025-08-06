@@ -6,9 +6,13 @@ import com.bedrockk.molang.runtime.MoLangEnvironment;
 import com.bedrockk.molang.runtime.MoScope;
 import com.bedrockk.molang.runtime.value.MoValue;
 import com.bedrockk.molang.runtime.value.StringValue;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import lombok.Value;
 
 @Value
+@ToString
+@EqualsAndHashCode(callSuper = true)
 public class StringExpression extends StringHolder implements Expression {
 
     StringValue string;

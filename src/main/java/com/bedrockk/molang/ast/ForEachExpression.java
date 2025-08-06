@@ -7,11 +7,15 @@ import com.bedrockk.molang.runtime.MoScope;
 import com.bedrockk.molang.runtime.struct.VariableStruct;
 import com.bedrockk.molang.runtime.value.DoubleValue;
 import com.bedrockk.molang.runtime.value.MoValue;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import lombok.Value;
 
 import java.util.ArrayList;
 
 @Value
+@ToString
+@EqualsAndHashCode(callSuper = true)
 public class ForEachExpression extends StringHolder implements Expression {
 
     Expression variable;

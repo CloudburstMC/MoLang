@@ -4,7 +4,9 @@ import com.bedrockk.molang.Expression;
 import com.bedrockk.molang.StringHolder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
+@ToString
 @Getter
 @RequiredArgsConstructor
 abstract public class BinaryOpExpression extends StringHolder implements Expression {

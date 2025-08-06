@@ -7,7 +7,9 @@ import com.bedrockk.molang.runtime.MoScope;
 import com.bedrockk.molang.runtime.value.DoubleValue;
 import com.bedrockk.molang.runtime.value.MoValue;
 import com.bedrockk.molang.runtime.value.StringValue;
+import lombok.ToString;
 
+@ToString(callSuper = true)
 public class PlusExpression extends BinaryOpExpression {
 
     public PlusExpression(Expression left, Expression right) {

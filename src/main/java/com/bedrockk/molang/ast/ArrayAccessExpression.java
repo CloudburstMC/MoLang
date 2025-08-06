@@ -5,12 +5,16 @@ import com.bedrockk.molang.StringHolder;
 import com.bedrockk.molang.runtime.MoLangEnvironment;
 import com.bedrockk.molang.runtime.MoScope;
 import com.bedrockk.molang.runtime.value.MoValue;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import lombok.Value;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 @Value
+@ToString
+@EqualsAndHashCode(callSuper = true)
 public class ArrayAccessExpression extends StringHolder implements Expression {
 
     Expression array;

@@ -6,7 +6,9 @@ import com.bedrockk.molang.runtime.MoLangEnvironment;
 import com.bedrockk.molang.runtime.MoScope;
 import com.bedrockk.molang.runtime.value.DoubleValue;
 import com.bedrockk.molang.runtime.value.MoValue;
+import lombok.ToString;
 
+@ToString(callSuper = true)
 public class GreaterExpression extends BinaryOpExpression {
 
     public GreaterExpression(Expression left, Expression right) {

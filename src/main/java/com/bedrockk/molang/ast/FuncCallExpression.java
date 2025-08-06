@@ -6,6 +6,8 @@ import com.bedrockk.molang.runtime.MoLangEnvironment;
 import com.bedrockk.molang.runtime.MoParams;
 import com.bedrockk.molang.runtime.MoScope;
 import com.bedrockk.molang.runtime.value.MoValue;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import lombok.Value;
 
 import java.util.ArrayList;
@@ -14,6 +16,8 @@ import java.util.Collections;
 import java.util.List;
 
 @Value
+@ToString
+@EqualsAndHashCode(callSuper = true)
 public class FuncCallExpression extends StringHolder implements Expression {
 
     Expression name;

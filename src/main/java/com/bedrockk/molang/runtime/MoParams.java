@@ -4,10 +4,12 @@ import com.bedrockk.molang.runtime.struct.MoStruct;
 import com.bedrockk.molang.runtime.value.DoubleValue;
 import com.bedrockk.molang.runtime.value.MoValue;
 import com.bedrockk.molang.runtime.value.StringValue;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@ToString(exclude = {"environment"})
 public class MoParams {
 
     public static final MoParams EMPTY = new MoParams(new MoLangEnvironment(), new ArrayList<>());
